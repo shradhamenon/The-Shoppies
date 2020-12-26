@@ -1,0 +1,23 @@
+.searchBar input {
+  font-family: Raleway;
+  width: 40vw;
+  padding: 2vh;
+  font-size: 2vh;
+  border-radius: 30px;
+  text-overflow: ellipsis;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  transition: all 1s ease-out
+}
+
+.searchBar input:focus {
+  border: 1px solid #fcba03;
+  box-shadow: 0 0 10px #fcba03;
+  border-radius: 30px;
+  outline: none;
+}
+
+.searchBar input::placeholder {
+  color: #949494;
+}
