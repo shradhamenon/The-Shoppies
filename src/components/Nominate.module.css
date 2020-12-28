@@ -1,4 +1,4 @@
-.content {
+.Nominate {
   animation: fadeIn ease 3s;
 }
 
@@ -24,8 +24,38 @@
 .search {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
   align-items: center;
+  justify-items: center;
+}
+
+.searchResults {
+  width: 70%;
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  row-gap: 5vh;
+  align-items: center;
+  justify-items: center;
+}
+
+.nominations {
+  position: fixed;
+  bottom: 5vh;
+  right: 3vh;
+}
+
+.nominations > span {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+  padding: 1vh 2vh;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.nominations:hover > span {
+  text-shadow: 0 0 10px  #fcba03, 0 0 10px  #fcba03, 0 0 10px  #fcba03, 0 0 20px  #fcba03, 0 0 20px  #fcba03, 0 0 20px  #fcba03, 0 0 20px  #fcba03;
 }
 
 @keyframes fadeIn {

@@ -1,0 +1,32 @@
+.NominationsModal {
+  margin: 3vh;
+}
+
+.nominees {
+  bottom: 5vh;
+  margin-top: 9vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  row-gap: 5vh;
+  align-items: center;
+  justify-items: center;
+}
+
+.NominationsModal > span {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  padding-bottom: 50px;
+  font-size: 2vh;
+}
+
+hr {
+  box-shadow: 0 0 10px #fcba03;
+  border-color: #fcba03;
+  margin-top: 3vh;
+  opacity: 0.6;
+}
+
+.ResultCard {
+  margin-left: 0;
+  padding-left: 0;
+}

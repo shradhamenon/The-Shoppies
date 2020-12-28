@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Home.module.css'
+import styles from './Home.module.css';
 
 class Home extends Component {
   render() {
     return(
-      <div className = { styles.content }>
+      <div className = { styles.Home }>
         <div className = { styles.title }>
           <span>The Shoppies</span>
         </div>

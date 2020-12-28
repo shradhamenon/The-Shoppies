@@ -1,4 +1,4 @@
-.searchBar input {
+.SearchBar input {
   font-family: Raleway;
   width: 40vw;
   padding: 2vh;
@@ -11,13 +11,13 @@
   transition: all 1s ease-out
 }
 
-.searchBar input:focus {
+.SearchBar input:focus {
   border: 1px solid #fcba03;
   box-shadow: 0 0 10px #fcba03;
   border-radius: 30px;
   outline: none;
 }
 
-.searchBar input::placeholder {
+.SearchBar input::placeholder {
   color: #949494;
 }

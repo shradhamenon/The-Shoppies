@@ -1,0 +1,69 @@
+.ResultCard {
+  height: 200px;
+  width: 150px;
+  background: no-repeat center center;
+  background-size: cover;
+  background-color: rgb(65, 65, 65);
+  border-radius: 5px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.show .nominate{
+  opacity: 0;
+}
+
+.details {
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ResultCard:hover .overlay{
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+.ResultCard:hover .nominate{
+  opacity: 1;
+}
+
+.nominate {
+  border: 1.5px solid white;
+  margin-top: 1vh;
+  padding: 4px 6px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.nominate:hover {
+  border: 1.5px solid #fcba03;
+  box-shadow: 0 0 10px #fcba03;
+  transition: all 0.25s ease-out;
+  background-color: #fcba03;
+}
+
+.nominate.disable {
+  pointer-events: none;
+  border: 1.5px solid rgb(139, 139, 139);
+  color:  rgb(139, 139, 139);
+  background-color: transparent;
+  box-shadow: none;
+}

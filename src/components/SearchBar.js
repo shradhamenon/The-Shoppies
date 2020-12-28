@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import styles from './SearchBar.module.css'
+import styles from './SearchBar.module.css';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
-    this.handleChange = this.handleChange.bind(this);
+    this.state = { searchQuery: '' };
+
+    this.executeSearch = this.executeSearch.bind(this);
   }
 
-  handleChange(event) {
+  executeSearch(event) {
     this.props.onChange(event);
   }
 
   render() {
     return(
-      <div className={styles.searchBar}>
-        <input type="text" placeholder="Search For Movies To Nominate" onChange={this.handleChange}></input>
+      <div className = {styles.SearchBar}>
+        <input type = "text" placeholder = "Search For Movies To Nominate" onChange = {this.executeSearch}></input>
       </div>
     );
   }
