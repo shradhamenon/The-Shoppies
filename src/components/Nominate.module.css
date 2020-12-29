@@ -55,7 +55,12 @@
 }
 
 .nominations:hover > span {
-  text-shadow: 0 0 10px  #fcba03, 0 0 10px  #fcba03, 0 0 10px  #fcba03, 0 0 20px  #fcba03, 0 0 20px  #fcba03, 0 0 20px  #fcba03, 0 0 20px  #fcba03;
+  text-shadow: 0 0 10px  #fcba03, 0 0 20px  #fcba03, 0 0 30px  #fcba03, 0 0 40px  #fcba03, 0 0 50px  #fcba03, 0 0 60px  #fcba03, 0 0 70px  #fcba03;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 @keyframes fadeIn {

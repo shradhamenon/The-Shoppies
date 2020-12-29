@@ -22,6 +22,10 @@
   cursor: pointer;
 }
 
+.enter:hover {
+  text-shadow: 0 0 10px  #fcba03, 0 0 10px  #fcba03, 0 0 10px  #fcba03, 0 0 40px  #fcba03, 0 0 50px  #fcba03, 0 0 60px  #fcba03, 0 0 70px  #fcba03;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
