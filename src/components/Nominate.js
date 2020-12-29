@@ -42,7 +42,7 @@ class Nominate extends Component {
 
   async executeSearch(event) {
     const query = event.target.value.split(/[ ]+/).join('%20');
-    const url = 'http://www.omdbapi.com/?apikey=b2669e1e&type=movie&s=' + query;
+    const url = 'https://www.omdbapi.com/?apikey=b2669e1e&type=movie&s=' + query;
     const response = await fetch(url);
     const data = await response.json();
 
