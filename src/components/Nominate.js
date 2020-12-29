@@ -70,7 +70,7 @@ class Nominate extends Component {
       toast.dark('🎉 Yay, you picked all 5 nominations!', {
         hideProgressBar: true,
         position: 'top-right',
-        autoClose: false,
+        autoClose: 5000,
       });
     }
   }
