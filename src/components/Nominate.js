@@ -52,6 +52,7 @@ class Nominate extends Component {
   }
 
   addNomination(movie) {
+    const movieTitle = movie.Title;
 
     const updatedNominees = this.state.nominees.concat(movie);
     this.setState({nominees: updatedNominees});
@@ -59,22 +60,23 @@ class Nominate extends Component {
     const updatedNomineeIDs = this.state.nomineeIDs.concat(movie.imdbID);
     this.setState({nomineeIDs: updatedNomineeIDs});
 
-    toast.dark('⭐ Movie Added To Nominations!', {
+    toast.dark(`⭐ ${movieTitle} Added To Nominations!`, {
       hideProgressBar: true,
       position: 'bottom-left',
-      autoClose: 1500,
+      autoClose: 2000,
     });
 
     if (updatedNominees.length === 5) {
       toast.dark('🎉 Yay, you picked all 5 nominations!', {
         hideProgressBar: true,
         position: 'top-right',
-        autoClose: 5000,
+        autoClose: false,
       });
     }
   }
 
   removeNomination(movie) {
+    const movieTitle = movie.Title;
 
     const updatedNominees = this.state.nominees.filter((item) => { return item.imdbID !== movie.imdbID });
     this.setState({nominees: updatedNominees});
@@ -82,10 +84,10 @@ class Nominate extends Component {
     const updatedNomineeIDs = this.state.nomineeIDs.filter((id) => { return id !== movie.imdbID });
     this.setState({nomineeIDs: updatedNomineeIDs});
     
-    toast.dark('💔 Movie Removed From Nominations!', {
+    toast.dark(`💔 ${movieTitle} Removed From Nominations!`, {
       hideProgressBar: true,
       position: 'bottom-left',
-      autoClose: 1500,
+      autoClose: 2000,
     });
   }
 
