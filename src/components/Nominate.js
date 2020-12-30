@@ -10,13 +10,13 @@ import NominationsModal from './NominationsModal';
 
 import styles from './Nominate.module.css';
 
+const baseURL = 'https://www.omdbapi.com/?apikey=b2669e1e&type=movie&s=';
+
 class Nominate extends Component {
   
   constructor(props) {
     super(props);
     this.state = {searchResults: [], nomineeIDs: [], nominees: []};
-
-    this.baseURL = 'https://www.omdbapi.com/?apikey=b2669e1e&type=movie&s='
 
     this.executeSearch = this.executeSearch.bind(this);
 
@@ -44,7 +44,7 @@ class Nominate extends Component {
 
   async executeSearch(event) {
     const query = event.target.value.split(/[ ]+/).join('%20');
-    const url = this.baseURL + query;
+    const url = baseURL + query;
     const response = await fetch(url);
     const data = await response.json();
 
