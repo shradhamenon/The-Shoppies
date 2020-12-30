@@ -16,6 +16,8 @@ class Nominate extends Component {
     super(props);
     this.state = {searchResults: [], nomineeIDs: [], nominees: []};
 
+    this.baseURL = 'https://www.omdbapi.com/?apikey=b2669e1e&type=movie&s='
+
     this.executeSearch = this.executeSearch.bind(this);
 
     this.addNomination = this.addNomination.bind(this);
@@ -42,7 +44,7 @@ class Nominate extends Component {
 
   async executeSearch(event) {
     const query = event.target.value.split(/[ ]+/).join('%20');
-    const url = 'https://www.omdbapi.com/?apikey=b2669e1e&type=movie&s=' + query;
+    const url = this.baseURL + query;
     const response = await fetch(url);
     const data = await response.json();
 
@@ -110,16 +112,28 @@ class Nominate extends Component {
       <ToastContainer />
 
       <div className = {styles.search}>
-        <SearchBar onChange = {this.executeSearch}></SearchBar>
-        <div className={styles.searchResults}>
-          { this.state.searchResults.map((movie) => <ResultCard key = {movie.imdbID} movie = {movie} addNomination = {this.addNomination} removeNomination = {this.removeNomination} disableNominate = {this.disableNominate(movie.imdbID)}/>) }
+        <SearchBar executeSearch = {this.executeSearch}></SearchBar>
+        <div className = {styles.searchResults}>
+          { this.state.searchResults.map((movie) => 
+            <ResultCard key = {movie.imdbID} 
+              movie = {movie} 
+              addNomination = {this.addNomination} 
+              removeNomination = {this.removeNomination} 
+              disableNominate = {this.disableNominate(movie.imdbID)}
+            />) 
+          }
         </div>
       </div>
 
       <div className = {styles.nominations}>
         <span onClick = {() => this.simpleDialog.show()}>Nominations</span>
         <SkyLight className = {styles.modal} dialogStyles = {this.nominationsModalStyle} hideOnOverlayClicked ref = {ref => this.simpleDialog = ref}>
-          <NominationsModal nominees = {this.state.nominees} addNomination = {this.addNomination} removeNomination = {this.removeNomination} disableNominate = {this.disableNominate} isNominated = {this.isNominated}></NominationsModal>
+          <NominationsModal nominees = {this.state.nominees} 
+            addNomination = {this.addNomination} 
+            removeNomination = {this.removeNomination} 
+            disableNominate = {this.disableNominate} 
+            isNominated = {this.isNominated}>
+          </NominationsModal>
         </SkyLight>
       </div>
     </div>

@@ -10,7 +10,7 @@ class SearchBar extends Component {
   }
 
   executeSearch(event) {
-    this.props.onChange(event);
+    this.props.executeSearch(event);
   }
 
   render() {
