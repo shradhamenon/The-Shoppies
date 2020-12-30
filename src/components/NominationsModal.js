@@ -43,7 +43,15 @@ class NominationsModal extends Component {
         <span>Nominations</span>
         <hr></hr>
         <div className = {styles.nominees}>
-          { this.state.nominees.map((movie) => <ResultCard key = {movie.imdbID} movie = {movie} addNomination = {this.addNomination} removeNomination = {this.removeNomination} disableNominate = {this.disableNominate(movie.imdbID)} isNominated = {this.isNominated(movie.imdbID)}/>) }
+          { this.state.nominees.map((movie) => 
+            <ResultCard key = {movie.imdbID} 
+              movie = {movie} 
+              addNomination = {this.addNomination} 
+              removeNomination = {this.removeNomination} 
+              disableNominate = {this.disableNominate(movie.imdbID)} 
+              isNominated = {this.isNominated(movie.imdbID)}
+            />) 
+          }
         </div>
       </div>
     );
